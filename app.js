@@ -3,8 +3,8 @@ var express = require('express')
   , http = require('http')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server);
-
-server.listen(8080);
+var port = process.env.port || 3000
+server.listen(port);
 
 // routing
 app.get('/', function (req, res) {
